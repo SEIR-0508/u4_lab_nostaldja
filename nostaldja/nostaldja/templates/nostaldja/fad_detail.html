@@ -1,0 +1,8 @@
+<!-- tunr/templates/tunr/artist_detail.html -->
+{% extends 'nostaldja/base.html' %} {% block content %}
+
+<h2>{{ fad.name }} <a href="">(edit)</a></h2>
+
+<a href="{% url 'fad_delete' pk=fad.pk %}">Delete</a>
+
+{% endblock %}

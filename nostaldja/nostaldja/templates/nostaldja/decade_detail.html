@@ -1,0 +1,20 @@
+<!-- tunr/templates/tunr/artist_detail.html -->
+{% extends 'nostaldja/base.html' %} {% block content %}
+
+<h2>
+  {{ decade.name }} <a href="{% url 'decade_edit' pk=decade.pk %}">(edit)</a>
+</h2>
+<h4>{{ decade.start_year }}</h4>
+<a href="{% url 'decade_delete' pk=decade.pk %}">Delete</a>
+
+<h3>Songs <a href="">(+)</a></h3>
+<ul>
+  {% for fad in decade.fads.all %}
+  <li>
+    <a href="{% url 'fad_detail' pk=fad.pk %}"
+      >{{ fad.name }}-{{ fad.description }} {{fad.pk}}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
